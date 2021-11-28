@@ -26,7 +26,7 @@ function App() {
     } else {
       // alert("You won!");
     }
-  }, [validate])
+  }, [validate, dispatch])
 
   const newGame = () => {
     ws.send(comandNew);
