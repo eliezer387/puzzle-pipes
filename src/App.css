@@ -1,0 +1,44 @@
+body {
+  font-family: 'Source Code Pro';
+  font-weight: normal;
+  font-style: normal;
+  background: rgb(100,100,210);
+  background: linear-gradient(41deg, rgba(100,100,210,1) 0%, rgba(74,64,233,1) 0%, rgba(0,212,255,1) 100%);
+  height: 100vh;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.container > .row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tiles {
+  color: greenyellow;
+}
+
+.tiles:hover {
+  color: #282c34;
+  cursor: pointer;
+  border-radius: 1.5px;
+  transition-duration: 1s, 2s;
+}
+
+.control-options {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  justify-content: space-around;
+  text-align: center;
+  padding: 8px;
+  margin: auto;
+}

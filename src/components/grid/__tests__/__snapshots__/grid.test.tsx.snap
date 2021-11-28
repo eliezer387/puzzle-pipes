@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdvvtL ginSla"
+  >
+    <div
+      class="sc-gsDKAQ bGbxpt"
+    >
+      <div
+        class="sc-dkPtRN kgUzps"
+      >
+        1
+      </div>
+      <div
+        class="sc-dkPtRN kgUzps"
+      >
+        2
+      </div>
+      <div
+        class="sc-dkPtRN kgUzps"
+      >
+        3
+      </div>
+    </div>
+    <div
+      class="sc-gsDKAQ bGbxpt"
+    >
+      <div
+        class="sc-dkPtRN kgUzps"
+      >
+        4
+      </div>
+      <div
+        class="sc-dkPtRN kgUzps"
+      >
+        5
+      </div>
+      <div
+        class="sc-dkPtRN kgUzps"
+      >
+        6
+      </div>
+    </div>
+    <div
+      class="sc-gsDKAQ bGbxpt"
+    >
+      <div
+        class="sc-dkPtRN kgUzps"
+      >
+        7
+      </div>
+      <div
+        class="sc-dkPtRN kgUzps"
+      >
+        8
+      </div>
+      <div
+        class="sc-dkPtRN kgUzps"
+      >
+        9
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
