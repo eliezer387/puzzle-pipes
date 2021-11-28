@@ -5,7 +5,7 @@ import { actions } from "./actions";
 const { SET_DIFFICULTY, SET_MAP, SET_COMMAND, SET_VALIDATION, SET_ROTATION, SHOW_ERROR, CLEAR_VALIDATION } =
   actions;
 
-const initialState = {
+export const initialState = {
   difficulty: Difficulty.Easy,
   command: "new 1",
   map: [[]],
@@ -13,8 +13,7 @@ const initialState = {
   showError: false,
 };
 
-function reducer(state = initialState, action: any) {
-  console.log({ state, action });
+export function reducer(state = initialState, action: any) {
   switch (action.type) {
     case SET_DIFFICULTY:
       return {
