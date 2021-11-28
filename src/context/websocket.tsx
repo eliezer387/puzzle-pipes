@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { SocketConfig } from "./config";
 import { ISocketData } from "./model";
 import { setMap, setRotation, setValidation } from "../redux/store";
-import { escapeLeadingUnderscores } from "typescript";
 
 const defaultValue = {} as any;
 
