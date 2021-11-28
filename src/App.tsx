@@ -2,13 +2,13 @@ import React, { useContext, useEffect } from "react";
 import "./App.css";
 import { DifficultyOptions } from "./model/model";
 import { useDispatch, useSelector } from "react-redux";
-import { setDifficulty, getMapState, getCommand, getShowError, getValidation, setValidationError, clearValidation } from "./redux/store";
+import { setDifficulty, getMapState, getShowError, getValidation, setValidationError, clearValidation, getNewGameCommand } from "./redux/store";
 import { WebSocketContext } from "./context/websocket";
 import { Button, Dropdown, Grid, } from "./components";
 
 function App() {
   const mapState = useSelector(getMapState);
-  const comandNew = useSelector(getCommand);
+  const comandNew = useSelector(getNewGameCommand);
   const showError = useSelector(getShowError);
   const validate = useSelector(getValidation)
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ function App() {
     } else {
       // alert("You won!");
     }
-  },[validate])
+  }, [validate])
 
   const newGame = () => {
     ws.send(comandNew);

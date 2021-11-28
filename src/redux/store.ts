@@ -80,6 +80,6 @@ export const getMapState = (state: any) => state.map;
 export const getCommand = (state: any) => state.command;
 export const getShowError = (state: any) => state.showError;
 export const getValidation = (state: any) => state.validation;
-
+export const getNewGameCommand = (state: any) => `new ${state.difficulty}`;
 
 export const store = createStore(reducer);
