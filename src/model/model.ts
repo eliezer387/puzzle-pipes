@@ -1,3 +1,4 @@
+
 export enum Difficulty {
   Easy = 1,
   Medium = 2,
@@ -16,3 +17,13 @@ export const DifficultyOptions = [
   { label: "Insane", value: Difficulty.Insane },
   { label: "Impossible", value: Difficulty.Impossible },
 ];
+
+export interface DropdownOptions {
+  label: string;
+  value: number;
+}
+
+export interface DropdownProps {
+  change: (event: any) => void;
+  options: DropdownOptions[];
+}
