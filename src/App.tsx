@@ -1,10 +1,10 @@
-import React, { useCallback, useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import "./App.css";
 import { DifficultyOptions } from "./model/model";
 import { useDispatch, useSelector } from "react-redux";
 import { setDifficulty, getMapState, getCommand, getShowError, getValidation, setValidationError, clearValidation } from "./redux/store";
 import { WebSocketContext } from "./context/websocket";
-import Button from "./components/button";
+import { Button, Dropdown, Grid, } from "./components";
 
 function App() {
   const mapState = useSelector(getMapState);
@@ -16,13 +16,15 @@ function App() {
 
 
   useEffect(() => {
-    console.log(validate);
-    if(validate=== "Incorrect."){
+    if(validate === "Incorrect."){
       dispatch(setValidationError(true));
       setTimeout(() => {
         dispatch(setValidationError(false));
         dispatch(clearValidation());
-      } , 3000);
+      }
+      , 3000);
+    } else {
+      // alert("You won!");
     }
   },[validate])
 
@@ -46,20 +48,10 @@ function App() {
   };
 
   const Controls = () => {
+    const handledifficulty = (e: any) => dispatch(setDifficulty(e.target.value));
     return (
       <div className="control-options">
-        <select
-          name="difficulty"
-          onChange={(event: any) => {
-            dispatch(setDifficulty(event.target.value));
-          }}
-        >
-          {DifficultyOptions.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
+        <Dropdown options={DifficultyOptions} change={handledifficulty} />
         <Button onClick={() => newGame()}>New Game</Button>
         <Button onClick={() => verifySolution()}>Verify</Button>
       </div>
@@ -70,17 +62,7 @@ function App() {
     <>
       <Controls />
       {showError && <div className="error">Incorrect</div>}
-      <div className="container">
-        {mapState.map((row: any[], y: number) => (
-          <div className="row">
-            {row.map((cell, x: number) => (
-              <div className="tiles" onClick={() => rotate(x, y)}>
-                {cell}
-              </div>
-            ))}
-          </div>
-        ))}
-      </div>
+      <Grid elements={mapState} rotate={rotate} />
     </>
   );
 }
