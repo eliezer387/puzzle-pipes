@@ -4,7 +4,7 @@ evolution test
 
 ## Description
 
-The application has been developed using React and redux, also for the ui components I used styled components
+The application has been developed using React and redux, also for the ui components I used styled components,
 for handling state I used redux like I mentioned before and React context for handling the calls to websocket
 
 I haven't solved any levels 🙁
